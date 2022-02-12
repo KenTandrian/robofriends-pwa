@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://aneagoie.github.io/robofriends-pwa",
   "dependencies": {
+    "@types/jest": "^27.4.0",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,7 +20,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --watchAll --env=jsdom",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -32,6 +33,21 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "testMatch": [
+      "**/src/**/*.test.{js,jsx,ts,tsx}",
+      "**/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   }
 }
